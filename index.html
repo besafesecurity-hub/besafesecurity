@@ -25,6 +25,7 @@
             background-color: var(--black);
             color: var(--white);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         /* Header & Nav */
@@ -84,7 +85,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=1920');
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -112,29 +113,6 @@
             letter-spacing: 3px;
             margin-bottom: 20px;
             font-weight: 300;
-        }
-
-        .hero .desc {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin-bottom: 30px;
-            color: #ccc;
-        }
-
-        .btn {
-            background-color: var(--gold);
-            color: var(--black);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-gold);
-            transform: scale(1.05);
         }
 
         /* Sections */
@@ -166,18 +144,11 @@
             padding: 30px;
             border-radius: 10px;
             border-top: 3px solid var(--gold);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .card h3 {
             color: var(--gold);
             margin-bottom: 20px;
-            font-size: 1.3rem;
             text-transform: uppercase;
         }
 
@@ -185,68 +156,64 @@
             list-style: none;
         }
 
-        .service-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
         .service-list li::before {
             content: '•';
-            position: absolute;
-            left: 0;
             color: var(--gold);
-            font-weight: bold;
+            margin-right: 10px;
         }
 
-        /* Secteurs */
-        .sectors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            text-align: center;
-        }
-
-        .sector-tag {
-            background: #222;
-            padding: 15px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            color: var(--gold);
-            font-weight: bold;
-        }
-
-        /* Contact Box */
-        .contact-container {
+        /* Formulaire de contact */
+        .form-container {
             background: var(--dark-grey);
-            padding: 50px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid #333;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--gold);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .contact-container h3 {
-            color: var(--gold);
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
+        .form-group {
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .contact-item strong {
+        .form-group label {
+            margin-bottom: 8px;
             color: var(--gold);
-            display: block;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
+            font-weight: bold;
         }
 
-        .contact-item p, .contact-item a {
-            font-size: 1.2rem;
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #222;
             color: white;
-            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: black;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-gold);
+            transform: translateY(-2px);
         }
 
         /* Footer */
@@ -269,9 +236,7 @@
             bottom: 0;
             width: 100%;
             z-index: 1000;
-            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
@@ -291,7 +256,6 @@
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#services">Prestations</a></li>
-                <li><a href="#engagements">Engagements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -301,8 +265,7 @@
         <img src="logo bsp.png" alt="Logo BSP" class="hero-logo-main">
         <h1>BE SAFE SECURITY</h1>
         <p class="slogan">LA SÉCURITÉ QUI INSPIRE CONFIANCE</p>
-        <p class="desc">Société spécialisée dans la protection des biens et des personnes. Nous accompagnons entreprises, collectivités et particuliers avec des solutions fiables et réactives.</p>
-        <a href="mailto:bsp.securite69@gmail.com" class="btn">Demander un Devis</a>
+        <a href="#contact" class="btn">Demander un Devis</a>
     </div>
 
     <section id="services">
@@ -314,24 +277,14 @@
                     <li>Agents de Sécurité (APS)</li>
                     <li>Contrôle d'accès</li>
                     <li>Rondes de prévention</li>
-                    <li>Accueil sécurisé</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Sécurité Incendie (SSIAP)</h3>
+                <h3>Sécurité Incendie</h3>
                 <ul class="service-list">
-                    <li>Prévention Incendie</li>
+                    <li>Prévention SSIAP</li>
                     <li>Gestion des alarmes</li>
-                    <li>Main courante</li>
-                    <li>Évacuation du public</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Rondes & Interventions</h3>
-                <ul class="service-list">
-                    <li>Levée de doute 24/7</li>
-                    <li>Patrouilles aléatoires</li>
-                    <li>Sécurisation d'urgence</li>
+                    <li>Évacuation</li>
                 </ul>
             </div>
             <div class="card">
@@ -345,64 +298,55 @@
         </div>
     </section>
 
-    <section id="sectors" style="background: #050505;">
-        <h2 style="color: var(--gold);">Secteurs d'Intervention</h2>
-        <div class="sectors-grid">
-            <div class="sector-tag">INDUSTRIE</div>
-            <div class="sector-tag">LOGISTIQUE & TRANSPORT</div>
-            <div class="sector-tag">GRANDE DISTRIBUTION</div>
-            <div class="sector-tag">IMMOBILIER</div>
-            <div class="sector-tag">ÉVÉNEMENTIEL</div>
-            <div class="sector-tag">COLLECTIVITÉS</div>
-        </div>
-    </section>
-
-    <section id="engagements">
-        <h2>Pourquoi Nous Choisir</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Réactivité 24/7</h3>
-                <p>Une équipe opérationnelle disponible à tout moment pour répondre à vos besoins critiques.</p>
-            </div>
-            <div class="card">
-                <h3>Agents Certifiés</h3>
-                <p>APS, SSIAP 1/2/3, Rondier/Intervenant, Agents Cynophiles hautement qualifiés et expérimentés.</p>
-            </div>
-            <div class="card">
-                <h3>Transparence Totale</h3>
-                <p>Rapports d'intervention, main courante numérique et suivi en temps réel de nos missions.</p>
-            </div>
-        </div>
-    </section>
-
     <section id="contact">
-        <div class="contact-container">
-            <h3>Nous Contacter</h3>
-            <div class="contact-item">
-                <strong>Siège Social</strong>
-                <p>62-64 COURS ALBERT THOMAS, 69003 LYON</p>
-            </div>
-            <div class="contact-item">
-                <strong>Email Officiel</strong>
-                <p><a href="mailto:bsp.securite69@gmail.com">bsp.securite69@gmail.com</a></p>
-            </div>
-            <div class="contact-item">
-                <strong>Astreinte 24h/24</strong>
-                <p><a href="tel:+33749332555">+33 7 49 33 25 55</a></p>
-            </div>
-            <p style="margin-top: 20px; color: var(--gold); font-style: italic;">Présent sur l'ensemble du territoire français</p>
+        <h2>Contactez-nous</h2>
+        <div class="form-container">
+            <form action="https://formspree.io/f/mrejjvay" method="POST">
+                
+                <div class="form-group">
+                    <label>Objet de votre demande</label>
+                    <select name="objet" required>
+                        <option value="Devis">Demande de Devis</option>
+                        <option value="Candidature">Candidature (Recrutement)</option>
+                        <option value="Information">Demande d'information</option>
+                    </select>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div class="form-group">
+                        <label>Nom / Entreprise</label>
+                        <input type="text" name="nom" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Téléphone</label>
+                        <input type="tel" name="telephone" placeholder="06 00 00 00 00" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email de contact</label>
+                    <input type="email" name="email" placeholder="votre@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Votre message</label>
+                    <textarea name="message" rows="5" placeholder="Détaillez votre besoin..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Envoyer la demande</button>
+            </form>
         </div>
     </section>
 
     <footer>
         <p>ARTICLE L 612-14 DU CODE DE LA SÉCURITÉ INTÉRIEURE : L'AUTORISATION D'EXERCICE NE CONFÈRE AUCUNE PRÉROGATIVE DE PUISSANCE PUBLIQUE À L'ENTREPRISE OU AUX PERSONNES QUI EN BÉNÉFICIENT.</p>
-        <p style="margin-top: 20px;">&copy; 2026 BE SAFE SECURITY - TOUS DROITS RÉSERVÉS</p>
+        <p style="margin-top: 20px;">62-64 COURS ALBERT THOMAS, 69003 LYON | bsp.securite69@gmail.com</p>
+        <p>&copy; 2026 BE SAFE SECURITY - TOUS DROITS RÉSERVÉS</p>
     </footer>
 
     <div class="emergency-bar">
-        ASTREINTE TÉLÉPHONIQUE 24H/24 : +33 7 49 33 25 55
+        URGENCE / ASTREINTE 24H/24 : +33 7 49 33 25 55
     </div>
 
 </body>
 </html>
-
