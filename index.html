@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BE SAFE SECURITY - La sécurité qui inspire confiance</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #0a0a0a;
+            --dark-grey: #1a1a1a;
+            --white: #ffffff;
+            --accent-gold: #f1c40f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=1920'); /* Placeholder for security feel */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-gold);
+            transform: scale(1.05);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--dark-grey);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Services Specific */
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Contact & Footer */
+        .contact-info {
+            text-align: center;
+            background: var(--dark-grey);
+            padding: 3rem;
+            border-radius: 15px;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .footer-legal {
+            background: #000;
+            padding: 2rem 10%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #333;
+        }
+
+        .emergency-bar {
+            background: var(--gold);
+            color: var(--black);
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: bold;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">B.S.P | BE SAFE SECURITY</div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#engagements">Engagements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="accueil" class="hero">
+        <h1>BE SAFE SECURITY</h1>
+        <p>LA SÉCURITÉ QUI INSPIRE CONFIANCE</p>
+        <p style="font-size: 1.1rem; color: #ccc;">Société spécialisée dans la protection des biens et des personnes. Nous accompagnons entreprises, collectivités et particuliers.</p>
+        <a href="mailto:bsp.securite69@gmail.com" class="btn">Demander un Devis</a>
+    </div>
+
+    <section id="services">
+        <h2>Nos Prestations</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Surveillance Humaine</h3>
+                <ul class="service-list">
+                    <li>Agents de Sécurité (APS)</li>
+                    <li>Contrôle d'accès</li>
+                    <li>Rondes de prévention</li>
+                    <li>Accueil sécurisé</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Sécurité Incendie (SSIAP)</h3>
+                <ul class="service-list">
+                    <li>Prévention Incendie</li>
+                    <li>Gestion des alarmes</li>
+                    <li>Main courante</li>
+                    <li>Évacuation du public</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Rondes & Interventions</h3>
+                <ul class="service-list">
+                    <li>Levée de doute 24/7</li>
+                    <li>Patrouilles aléatoires</li>
+                    <li>Sécurisation d'urgence</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Événementiel</h3>
+                <ul class="service-list">
+                    <li>Filtrage & Palpation</li>
+                    <li>Gestion des foules</li>
+                    <li>Protection VIP</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="engagements" style="background-color: var(--dark-grey);">
+        <h2 style="color: var(--gold);">Pourquoi Nous Choisir ?</h2>
+        <div class="grid">
+            <div class="card" style="background: var(--black);">
+                <h3>Réactivité 24/7</h3>
+                <p>Une équipe opérationnelle disponible à tout moment pour répondre à vos besoins critiques.</p>
+            </div>
+            <div class="card" style="background: var(--black);">
+                <h3>Agents Certifiés</h3>
+                <p>APS, SSIAP 1/2/3, Rondier/Intervenant, Agents Cynophiles hautement qualifiés.</p>
+            </div>
+            <div class="card" style="background: var(--black);">
+                <h3>Transparence</h3>
+                <p>Rapports d'intervention, main courante numérique et suivi en temps réel de nos missions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Nous Contacter</h2>
+        <div class="contact-info">
+            <p><strong>Siège Social :</strong> 62-64 COURS ALBERT THOMAS, 69003 LYON</p>
+            <p><strong>Email :</strong> bsp.securite69@gmail.com</p>
+            <p><strong>Astreinte 24h/24 :</strong> +33 7 49 33 25 55</p>
+            <p style="margin-top: 2rem; color: var(--gold);">Intervention sur l'ensemble du territoire français</p>
+        </div>
+    </section>
+
+    <div class="footer-legal">
+        <p>ARTICLE L 612-14 DU CODE DE LA SÉCURITÉ INTÉRIEURE : L'AUTORISATION D'EXERCICE NE CONFERE AUCUNE PRÉROGATIVE DE PUISSANCE PUBLIQUE A L'ENTREPRISE OU AUX PERSONNES QUI EN BÉNÉFICIENT.</p>
+        <p style="margin-top: 10px;">&copy; 2026 BE SAFE SECURITY. Tous droits réservés.</p>
+    </div>
+
+    <div class="emergency-bar">
+        URGENCE 24/7 : +33 7 49 33 25 55
+    </div>
+
+</body>
+</html>
